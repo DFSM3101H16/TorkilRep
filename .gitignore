@@ -1,5 +1,5 @@
-2D Physics/Temp/
-2D Physics/Library/
-2D Physics/2D Physics.sln
-2D Physics/*.csproj
+*/2D Physics/Temp/
+*/2D Physics/Library/
+*/2D Physics/2D Physics.sln
+*/2D Physics/*.csproj
 Binaries_executables_etc/*.pdb
