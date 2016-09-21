@@ -2,4 +2,15 @@
 */2D Physics/Library/
 */2D Physics/*.sln
 */2D Physics/*.csproj
+
+
+
+*/FallskjermHoppern/Temp/
+*/FallskjermHoppern/Library/
+*/FallskjermHoppern/*.sln
+*/FallskjermHoppern/*.csproj
+
+
+
+
 Binaries_executables_etc/*.pdb
