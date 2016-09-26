@@ -11,6 +11,7 @@ public class Physics : MonoBehaviour {
     public float dragCo = 0.47f;            //Drag koeffisienten (for en sphere)
     public float mass;                      //Massen til det som faller [mass] = kg
     public float velocity;                  //Farten i m/s
+    public float startHeight = 200f;        //Høyden fra føyet til bakken [m] = meter
 
     public float time;
     float seconds;
@@ -26,17 +27,21 @@ public class Physics : MonoBehaviour {
     public bool jumped = false;
     public string condition;
 
+    public Physics(float _mass, float _area, float _startHeight)
+    {
+
+    }
+
 
     void Start () {
         //Henter ressurser fra UI'en m.m.
-        timerLabel = GameObject.Find("Text_Seconds").GetComponent<Text>();
-        conditionLabel = GameObject.Find("Text_Condition").GetComponent<Text>();
-        velocityLabel = GameObject.Find("Text_Velocity").GetComponent<Text>();
-        massText = GameObject.Find("InputField_Mass").GetComponentInChildren<Text>();
+        timerLabel =        GameObject.Find("Text_Seconds").GetComponent<Text>();
+        conditionLabel =    GameObject.Find("Text_Condition").GetComponent<Text>();
+        velocityLabel =     GameObject.Find("Text_Velocity").GetComponent<Text>();
+        massText =          GameObject.Find("InputField_Mass").GetComponentInChildren<Text>();
         
         transform.position = new Vector3(0, 0, 0);
     }
-
 
     public void Jump ()
     {
@@ -54,7 +59,6 @@ public class Physics : MonoBehaviour {
         }
         
     }
-
 
     public void Reset ()
     {
@@ -93,7 +97,6 @@ public class Physics : MonoBehaviour {
         conditionLabel.text = "Condition: " + condition;
     }
 
-	
 	void FixedUpdate () {
 
         if (updateStarted == true)
@@ -133,103 +136,4 @@ public class Physics : MonoBehaviour {
             }
         }
 	}
-}
-
-public abstract class ODE {
-
-    private int numEqns;
-    private float[] q;
-    private float s;
-
-    public ODE(int numEqns)
-    {
-        this.numEqns = numEqns;
-        q = new float[numEqns];
-    }
-
-    public ODE() //Default constructor
-    { }
-
-    public int getNumEqns()
-    {
-        return numEqns;
-    }
-
-    public float getS()
-    {
-        return s;
-    }
-
-    public float getQ(int index)
-    {
-        return q[index];
-    }
-
-    public float[] getAllQ()
-    {
-        return q;
-    }
-
-    public void setS(float value)
-    {
-        s = value;
-        return;
-    }
-
-    public void setQ(float value, int index)
-    {
-        q[index] = value;
-        return;
-    }
-
-    public abstract float[] getRightHandSide(float s, float[] q, float[] deltaQ, float ds, float qScale);
-}
-
-public class ODESolver {
-
-    public static void RungeKutta4(ODE ode, float ds)
-    {
-        int j;
-        int numEqns = ode.getNumEqns();
-        float s;
-        float[] q;
-        float[] dq1 = new float[numEqns];
-        float[] dq2 = new float[numEqns];
-        float[] dq3 = new float[numEqns];
-        float[] dq4 = new float[numEqns];
-
-        s = ode.getS();
-        q = ode.getAllQ();
-
-        dq1 = ode.getRightHandSide(s, q, q, ds, 0.0f);
-        dq2 = ode.getRightHandSide(s + 0.5f * ds, q, dq1, ds, 0.5f);
-        dq3 = ode.getRightHandSide(s + 0.5f * ds, q, dq2, ds, 0.5f);
-        dq4 = ode.getRightHandSide(s + ds, q, dq3, ds, 1.0f);
-
-        ode.setS(s + ds);
-
-        for (j = 0; j < numEqns; ++j)
-        {
-            q[j] = q[j] + (dq1[j] + 2.0f * dq2[j] + 2.0f * dq3[j] + dq4[j]) / 6.0f;
-            ode.setQ(q[j], j);
-        }
-
-        return;
-    }
-}
-
-public class FallingODE : ODE
-{
-
-
-
-
-
-
-
-
-    public override float[] getRightHandSide(float s, float[] q, float[] deltaQ, float ds, float qScale)
-    {
-        throw new NotImplementedException();
-    }
 }
