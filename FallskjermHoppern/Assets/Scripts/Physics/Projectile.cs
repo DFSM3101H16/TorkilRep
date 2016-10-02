@@ -7,6 +7,7 @@ public class Projectile : ODE
 
     public static float G = -9.81f;
 
+    public Projectile() { }
     public Projectile(Vector3 position, Vector3 velocity, float time) : base(6)
     {
         setS(time);
@@ -63,7 +64,7 @@ public class Projectile : ODE
         return getS();
     }
 
-    public void updateLocationAndVelocity(float dt)
+    public virtual void updateLocationAndVelocity(float dt)
     {
         float time = getS();
         float vx0 = getQ(0);
@@ -87,8 +88,6 @@ public class Projectile : ODE
         setQ(z, 5); 
     }
 
-
-    //  public const 
     public override float[] getRightHandSide(float s, float[] q, float[] deltaQ, float ds, float qScale)
     {
         return new float[1];
