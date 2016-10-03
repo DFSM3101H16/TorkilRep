@@ -8,13 +8,13 @@ public class Physics : MonoBehaviour
     //--Fysikk variabler--//
     public float rho = 1.225f;                      //Massetettheten til luft, [rho] = kg/m^3 
     public float G = -9.81f;                        //Tyngdens akselerasjon, [G] = m/s^2 
-    public float area = 0.25f;                      //Arealet til det som faller. Later som fallskjermhopperen er en sirkel (0.5m sirkulært tverrsnitt)
+    public float area = 0.5f;                      //Arealet til det som faller. Later som fallskjermhopperen er en sirkel (0.5m sirkulært tverrsnitt)
     public float dragCo = 0.47f;                    //Drag koeffisienten (for en sphere)
     public float mass;                              //Massen til det som faller [mass] = kg
     public Vector3 velocity = new Vector3(0, 0, 0); //Farten i m/s
     public DragProjectile DragProjectile;           //Kalkulasjon med drag
 
-    public float height = 500;
+    public float height = 200;
     public float time;
 
     Text timerLabel;
@@ -52,7 +52,8 @@ public class Physics : MonoBehaviour
     {
         if (jumped == true)
         {
-            DragProjectile.area = 300f; //Utløser fallskjermen => aeralet øker kraftig = større drag
+            DragProjectile.area = 20f; //Utløser fallskjermen => aeralet øker kraftig = større drag
+            DragProjectile.dragCo = 1.4f;
         }
 
     }
@@ -61,8 +62,9 @@ public class Physics : MonoBehaviour
     {
         //Tilbakestiller alle viktige faktorer til orginale verdier
         transform.position = new Vector3(0, 0, 0);
+        dragCo = 0.47f;
+        area = 0.5f;
         velocity.y = 0f;
-        area = 0.25f;
         Time.timeScale = 0;
         jumped = false;
         timerLabel.text = "0.0";
