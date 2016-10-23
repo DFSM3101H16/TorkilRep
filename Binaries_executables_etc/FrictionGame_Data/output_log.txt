@@ -6,22 +6,22 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     3072 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.041 seconds
-Platform assembly: C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Torkil\OneDrive\GIT\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.039 seconds
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\Binaries_executables_etc\FrictionGame_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 144Hz; virtual: 3840x1080 at -1920,0
 <RI> Initialized touch support.
-UnloadTime: 0.419544 ms
+UnloadTime: 0.391165 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: ecc -> priority: 1 
-  Thread -> id: 1a64 -> priority: 1 
+  Thread -> id: 2434 -> priority: 1 
+  Thread -> id: 8504 -> priority: 1 

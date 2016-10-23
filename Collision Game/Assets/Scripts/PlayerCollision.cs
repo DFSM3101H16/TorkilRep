@@ -14,6 +14,7 @@ public class PlayerCollision : MonoBehaviour{
     public float e = 0.7f;              //Coefficient of restitution
 
     Vector3 gravVector = new Vector3(0, -9.81f, 0); //Gravity vector
+
     AudioSource audio;                              //Audio object
     public bool dropped;                            //Boolean for when the ball is dropped
 
@@ -79,7 +80,6 @@ public class PlayerCollision : MonoBehaviour{
                 {
                     audio.Play(); //Plays a neat audio clip on collision
                 }
-
                 //Angle between players right vector and collision object's normal, then converted to radians
                 angle = Mathf.Deg2Rad * Vector3.Angle(Vector3.right, hit.normal);
 
