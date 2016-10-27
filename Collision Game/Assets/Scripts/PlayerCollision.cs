@@ -12,6 +12,9 @@ public class PlayerCollision : MonoBehaviour{
     public float yPosition;             //Position on x-axis
     public float xPosition;             //Position on y-axis
     public float e = 0.7f;              //Coefficient of restitution
+	public Vector3 lineOfAction;		// Line of action for collisions
+	public float vp1, vp1new;
+	public Vector3 hastighet, hastighet2, oldPosition, presentPosition, calcPosition;
 
     Vector3 gravVector = new Vector3(0, -9.81f, 0); //Gravity vector
 
@@ -32,6 +35,8 @@ public class PlayerCollision : MonoBehaviour{
         angle = 0;
         yPosition = 8.97f;
         transform.position = new Vector3(transform.position.x, yPosition, 0);
+		calcPosition = new Vector3(transform.position.x, yPosition, 0);
+		oldPosition = calcPosition;
     }
     
     void Update () //Control of the ball at the start 
@@ -62,6 +67,7 @@ public class PlayerCollision : MonoBehaviour{
 
     void FixedUpdate () { //Collition detection, velocity and position manipulation
 
+
         if (dropped == true) //The fixed update code will run after the ball is dropped
         {
             //FORMULA: vf = v0 + a * t
@@ -70,8 +76,16 @@ public class PlayerCollision : MonoBehaviour{
             //FORMULA: x(t) = x0 + v0 * t + 1/2 * a * t^2
             Vector3 newPosition = transform.position + velocity * Time.deltaTime - 0.5f * gravVector * Time.deltaTime * Time.deltaTime;
 
+			yPosition = transform.position.y;
+			xPosition = transform.position.x;
+
             Vector3 directionVector = newPosition - transform.position;
-            RaycastHit hit;
+			//hastighet = (transform.po/Time.deltaTime; // legger til hastighet slik at alle kan se den 
+			hastighet = hastighet + gravVector * Time.fixedDeltaTime;
+			calcPosition = transform.position + hastighet * Time.fixedDeltaTime - 0.5f * gravVector * Time.fixedDeltaTime * Time.fixedDeltaTime;
+
+
+			RaycastHit hit;
 
             //Checks for collision with raycast from the player ball (sphere)
             if (Physics.SphereCast(transform.position, playerRadius, directionVector, out hit, directionVector.magnitude))
@@ -80,6 +94,19 @@ public class PlayerCollision : MonoBehaviour{
                 {
                     audio.Play(); //Plays a neat audio clip on collision
                 }
+
+				// 3D vektor kollisjon begynner her
+				lineOfAction = transform.position - hit.transform.position;
+				lineOfAction = lineOfAction.normalized;
+
+				vp1 = Vector3.Dot (lineOfAction, hastighet);
+				vp1new = (mass1 - e * mass2) * vp1 / (mass1 + mass2);
+				hastighet2 = hastighet - (vp1 - vp1new) * lineOfAction;
+				hastighet = hastighet2;
+
+				calcPosition = transform.position + hastighet * Time.fixedDeltaTime - 0.5f * gravVector * Time.fixedDeltaTime * Time.fixedDeltaTime;
+
+
                 //Angle between players right vector and collision object's normal, then converted to radians
                 angle = Mathf.Deg2Rad * Vector3.Angle(Vector3.right, hit.normal);
 
@@ -87,11 +114,21 @@ public class PlayerCollision : MonoBehaviour{
 
                 //FORMULA: x(t) = x0 + v0 * t + 1/2 * a * t^2
                 newPosition = transform.position + velocity * Time.deltaTime - 0.5f * gravVector * Time.deltaTime * Time.deltaTime;
+
+
+
+
             }
             vx = velocity.x;
             vy = velocity.y;
-            transform.position = newPosition;
+			oldPosition = transform.position;
+			//transform.position = newPosition;
+			transform.position = calcPosition;
+			presentPosition = transform.position;
+			hastighet = (transform.position - oldPosition) / Time.fixedDeltaTime;
+
         }
+
 	}
 
     public Vector3 getPostVelocity(float xVelocity, float yVelocity, float mass1, float mass2, float e, float angle) //The physics!
