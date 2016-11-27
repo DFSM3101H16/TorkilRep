@@ -1,0 +1,51 @@
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.118 seconds
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Torkil\Desktop\TorkilsRep\EKSAMEN\Builds\WINDOWS\EksamenSpill_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 144Hz; virtual: 3840x1080 at -1920,0
+<RI> Initialized touch support.
+UnloadTime: 0.701873 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.289062 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 541.
+Total: 0.259216 ms (FindLiveObjects: 0.035693 ms CreateObjectMapping: 0.035108 ms MarkObjects: 0.182563 ms  DeleteObjects: 0.005558 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.663254 ms
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 212.
+Total: 0.301053 ms (FindLiveObjects: 0.019309 ms CreateObjectMapping: 0.019309 ms MarkObjects: 0.162375 ms  DeleteObjects: 0.099473 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.581334 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 596.
+Total: 0.246343 ms (FindLiveObjects: 0.035400 ms CreateObjectMapping: 0.033352 ms MarkObjects: 0.171738 ms  DeleteObjects: 0.004973 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.671738 ms
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 212.
+Total: 0.454359 ms (FindLiveObjects: 0.038619 ms CreateObjectMapping: 0.008777 ms MarkObjects: 0.235810 ms  DeleteObjects: 0.170860 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2a9c -> priority: 1 
+  Thread -> id: fa0 -> priority: 1 
